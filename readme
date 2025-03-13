@@ -1,0 +1,21 @@
+1. npm i mongoose nodemon jsonwebtoken bcryptjs cookie-parser dotenv.
+2. write "type": "module" in package.json, because it enables import and export syntax
+3. enum: ['student', 'recruiter'] - In Mongoose, the enum property is used to restrict a field to a specific set of values. This is useful when you want to enforce data integrity by ensuring that only predefined values can be stored in a document.
+4. company: {type: mongoose.Schema.Types.ObjectId, ref: 'Company'} - is used to create a reference (relationship) between two collections in MongoDB
+5. timestamps: true is an option used in schema definitions to automatically add createdAt and updatedAt fields to your documents
+6. const handlePassword = await bcrypt.hash(password, 10);
+        await User.create({
+            fullname,
+            email,
+            phoneNumber,
+            password: handlePassword,
+            role
+        });
+6 is creating user and when user will enter password by using bcrypt we are encrypting the password
+7. const isPasswordMatch = await bcrypt.compare(password, user.password);   this is comapring password with input password and the password which user were entered while creating the account
+8. Used some libraries like sooner for toast, shadcn ui, react-redux, react-router-dom, lucide-react
+9. By default, when you submit a form, the page reloads. Using e.preventDefault();, we can stop this behavior and handle form submission manually.
+10. By default, browsers do not send cookies in cross-origin requests (when your frontend and backend are on different domains).
+✅ withCredentials: true ensures that cookies (like authentication tokens or session IDs) are sent with requests.
+11. to persist(meaning that our data remain in store after we reloading page) store(which contains authentication details) we use some libraries like
+12. In React, dispatch is used to send actions to a state management system like Redux or Recoil.
